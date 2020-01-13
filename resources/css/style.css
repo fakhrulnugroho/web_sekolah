@@ -1,0 +1,66 @@
+body {
+	background-image: url('../images/bg_all.jpg');
+}
+
+.smk {
+	font-family: 'mulisemibold';
+	font-size: 18px;
+}
+
+.visi {
+	font-family: 'mulilight';
+	font-size: 14px;
+}
+
+.nav-orange {
+	background-color: #ED8240;
+}
+.navlink {
+	border-bottom: 1px solid #ED8240;
+	transition: .35s;
+}
+.navlink.active {
+	border-bottom: 1px solid #fff;
+}
+.navlink:hover {
+	border-bottom: 1px solid #fff;
+}
+
+.hero img{
+	width: 100%;
+}
+
+.title {
+	font-family: 'mulisemibold';
+	font-size: 20px;
+	padding-bottom: 7.5px;
+	border-bottom: 5px solid #ddd
+}
+
+span.tgl {
+	font-size: 12px;
+	font-family: 'mulilight';
+	color: #888;
+	display: block;
+}
+
+
+span.judul a {
+	text-decoration: none;
+	font-size: 16px;
+	font-family: 'mulisemibold';
+	color: #ED8240;
+	display: inline-block;
+	transition: .35s;
+}
+
+span.judul a:hover {
+	background-color: #ED8240;
+	color: white;
+}
+
+.footer {
+	background-color: #ED8240;
+	padding: 15px 15px 15px 30px;
+	text-align: center;
+}
