@@ -6,18 +6,6 @@ require_once '../../koneksi.php';
 $nama = mysqli_escape_string($koneksi, $_POST['nama']);
 $username = mysqli_escape_string($koneksi, $_POST['username']);
 $password = mysqli_escape_string($koneksi, $_POST['password']);
-$password2 = mysqli_escape_string($koneksi, $_POST['password2']);
-
-
-if($password !== $password2){
-	?>
-	<script>
-		alert('Password tidak cocok');
-		document.location.href = 'tambah.php';
-	</script>
-	<?php
-}
-
 
 // encrypt password
 $password = password_hash($password, PASSWORD_DEFAULT);
@@ -36,7 +24,7 @@ if($_FILES['foto']['error'] == 0){
 	if($_FILES['foto']['size'] < 1000000){
 		if (file_exists($tujuan . $nama_foto)) unlink($tujuan . $nama_foto);
 
-		$query = mysqli_query($koneksi, "INSERT INTO tbl_pengguna VALUES('', '$nama', '$username', '$password', '$nama_foto')") or die(mysqli_error($koneksi));
+		$query = mysqli_query($koneksi, "INSERT INTO tbl_pengguna (nama, username, password, foto) VALUES('$nama', '$username', '$password', '$nama_foto')") or die(mysqli_error($koneksi));
 		move_uploaded_file($asal, $tujuan . $nama_foto) or die('gagal upload foto');
 		if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Ditambahkan!';

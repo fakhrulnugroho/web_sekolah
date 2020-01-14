@@ -25,7 +25,7 @@ if($_FILES['foto']['error'] == 0){
 	if($_FILES['foto']['size'] < 1000000){
 		if (file_exists('../../images/artikel/' . $nama_foto)) unlink('../../images/artikel/' . $nama_foto);
 
-		$query = mysqli_query($koneksi, "INSERT INTO tbl_artikel VALUES('', '$judul', '$isi', '$tanggal', '$nama_foto', $id_kategori)") or die(mysqli_error($koneksi));
+		$query = mysqli_query($koneksi, "INSERT INTO tbl_artikel (judul, isi, tanggal, foto, id_kategori) VALUES('$judul', '$isi', '$tanggal', '$nama_foto', $id_kategori)") or die(mysqli_error($koneksi));
 		move_uploaded_file($asal, $tujuan . $nama_foto) or die('gagal upload foto');
 		if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Ditambahkan!';

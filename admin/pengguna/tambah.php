@@ -40,12 +40,6 @@
 										<input type="password" class="form-control" id="password" placeholder="password" autocomplete="off" required="required" name="password">
 									</div>
 								</div>
-								<div class="col">
-									<div class="form-group">
-										<label for="password2">Ulangi Password</label>
-										<input type="password" class="form-control" id="password2" placeholder="ulangi password" autocomplete="off" required="required" name="password2">
-									</div>
-								</div>
 							</div>
 							<div class="form-group">
 								<label for="foto">Foto</label>

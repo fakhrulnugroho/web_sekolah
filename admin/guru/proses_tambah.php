@@ -26,7 +26,7 @@ if($_FILES['foto']['error'] == 0){
 	if($_FILES['foto']['size'] < 1000000){
 		if (file_exists($tujuan . $nama_foto)) unlink($tujuan . $nama_foto);
 
-		$query = mysqli_query($koneksi, "INSERT INTO tbl_guru VALUES('', '$nama', $nip, '$jenis_kelamin', '$no_hp', '$tempat_lahir', '$tanggal_lahir', '$mata_pelajaran', '$alamat', '$nama_foto')") or die(mysqli_error($koneksi));
+		$query = mysqli_query($koneksi, "INSERT INTO tbl_guru (nama, nip, jenis_kelamin, no_hp, tempat_lahir, tanggal_lahir, mata_pelajaran, alamat, foto) VALUES('$nama', $nip, '$jenis_kelamin', '$no_hp', '$tempat_lahir', '$tanggal_lahir', '$mata_pelajaran', '$alamat', '$nama_foto')") or die(mysqli_error($koneksi));
 		move_uploaded_file($asal, $tujuan . $nama_foto) or die('gagal upload foto');
 		if($query){
 			$_SESSION['sukses'] = 'Data Berhasil Ditambahkan!';
